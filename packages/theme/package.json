@@ -1,0 +1,41 @@
+{
+  "name": "@chendap/vitepress-wmh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "exports": {
+    "./node": {
+      "types": "./node.d.ts",
+      "default": "./node.js"
+    },
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "vitepress dev demo",
+    "build": "vitepress build demo",
+    "preview": "vitepress preview demo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "vitepress": "1.0.0-alpha.46",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.12",
+    "gray-matter": "^4.0.3"
+  }
+}

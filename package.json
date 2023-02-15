@@ -1,0 +1,25 @@
+{
+  "name": "vitepress-wmh",
+  "version": "1.0.0",
+  "description": "blog,theme,vitepress",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "pnpm --filter @chendap/vitepress-wmh dev",
+    "build:theme": "pnpm --filter @chendap/vitepress-wmh build",
+    "preview:template": "pnpm run -C packages/template preview",
+    "preview:theme": "pnpm run -C packages/theme preview",
+    "release": "pnpm build:theme && pnpm release:only",
+    "release:only": "changeset publish --registry=https://registry.npmjs.com/"
+  },
+  "keywords": [],
+  "author": "chendp",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "eslint": "^8.34.0",
+    "prettier": "^2.8.4",
+    "vitepress": "1.0.0-alpha.46",
+    "vue": "^3.2.47"
+  }
+}
