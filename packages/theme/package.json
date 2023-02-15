@@ -15,7 +15,11 @@
     "build": "vitepress build demo",
     "preview": "vitepress preview demo"
   },
-  "keywords": [],
+  "keywords": [
+    "vitepress",
+    "theme",
+    "blog"
+  ],
   "author": "",
   "license": "ISC",
   "pnpm": {
