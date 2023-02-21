@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@chendap/template": "0.0.0",
+    "@chendap/vitepress-wmh": "0.0.0"
+  },
+  "changesets": [
+    "funny-comics-speak"
+  ]
+}

@@ -11,7 +11,7 @@
     "preview:template": "pnpm run -C packages/template preview",
     "preview:theme": "pnpm run -C packages/theme preview",
     "release": "pnpm build:theme && pnpm release:only",
-    "release:only": "changeset publish --registry=https://registry.npmjs.com/"
+    "release:only": "changeset publish -r"
   },
   "keywords": [],
   "author": "chendp",
