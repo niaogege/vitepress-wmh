@@ -1,0 +1,60 @@
+{
+  "parser": "vue-eslint-parser",
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:vue/vue3-essential",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["vue", "@typescript-eslint", "todo-ddl", "prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false, // 默认使用双引号
+        "semi": true, // 行尾加上分号
+        "parser": "flow"
+      }
+    ],
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "import/extensions": "off",
+    "quotes": ["error", "double"], // 字符串使用单双引号,double,single
+    "semi": "error",
+    "import/no-unresolved": "off",
+    "todo-ddl/diy": "warn",
+    "import/prefer-default-export": "off",
+    "no-param-reassign": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-restricted-syntax": "off",
+    "no-bitwise": "off",
+    "camelcase": "off",
+    "no-case-declarations": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "no-undef": "off",
+    "no-shadow": "off",
+    "max-len": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "no-use-before-define": "off",
+    "no-continue": "off",
+    "no-extend-native": "warn",
+    "no-underscore-dangle": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "non-null-expression": "off"
+  }
+}

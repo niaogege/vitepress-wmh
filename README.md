@@ -1,5 +1,14 @@
 # 基于 vitePress 搭建属于自己的主题包
 
+### 基于 changeset 发包
+
+步骤主要有
+
+- pnpm changeset add // 选择需要发布的包
+- 提交代码到 git // 保持当前工作目录干净
+- pnpm changeset version // 更新版本
+- pnpm publish -r // 发布
+
 ### pnpm 相关配置
 
 - pnpm.peerDependencyRules.ignoreMissing
