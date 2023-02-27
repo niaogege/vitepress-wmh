@@ -6,7 +6,7 @@
     "es2021": true
   },
   "parserOptions": {
-    "ecmaVersion": "latest",
+    "ecmaVersion": 2021,
     "parser": "@typescript-eslint/parser",
     "sourceType": "module",
     "ecmaFeatures": {
@@ -22,20 +22,13 @@
   ],
   "plugins": ["vue", "@typescript-eslint", "todo-ddl", "prettier"],
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": false, // 默认使用双引号
-        "semi": true, // 行尾加上分号
-        "parser": "flow"
-      }
-    ],
+    "prettier/prettier": "error",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/extensions": "off",
-    "quotes": ["error", "double"], // 字符串使用单双引号,double,single
-    "semi": "error",
+    "quotes": ["warn", "never"],
+    "semi": ["error", "never"],
     "import/no-unresolved": "off",
     "todo-ddl/diy": "warn",
     "import/prefer-default-export": "off",

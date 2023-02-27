@@ -1,5 +1,4 @@
 dist
 node_modules
-packages/theme/src/node.js
-packages/theme/node.d.ts
-packages/theme/node.js
+packages/theme/server.d.ts
+packages/theme/server.js
