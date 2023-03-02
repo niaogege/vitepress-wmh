@@ -6,7 +6,7 @@
   "packageManager": "pnpm@7.21.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "pnpm --filter @chendap/vitepress-wmh dev",
+    "dev": "pnpm --filter @chendap/vitepress-wmh dev:lib",
     "build:theme": "pnpm --filter @chendap/vitepress-wmh build",
     "preview:template": "pnpm run -C packages/template preview",
     "preview:theme": "pnpm run -C packages/theme preview",

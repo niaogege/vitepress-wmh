@@ -5,6 +5,16 @@ import { DefaultTheme } from "vitepress"
  * 传入参数配置类型
  */
 export namespace WmhThemeConfig {
+  /**
+   * 首页配置
+   */
+  export interface HomePageSetting {
+    name?: string
+    motto?: string
+    inspiring?: string
+    pageSize?: number | undefined
+  }
+
   // 定义页面元数据
   export interface PageMeta {
     title: string
@@ -24,19 +34,25 @@ export namespace WmhThemeConfig {
     route: string
     meta: PageMeta
   }
-  /**
-   * 首页配置
-   */
-  export interface HomeBlog {
-    name?: string
-    motto?: string
-    inspiring?: string
-    pageSize?: number | undefined
-  }
 
-  export interface ArticleConfig {
+  /**
+   * 全局文章配置
+   */
+  export interface GlobalPagesData {
+    /**
+     * 是否展示阅读相关
+     */
     readingTime?: boolean
+
+    /**
+     * 是否展示评论 首页除外
+     */
     displayComment?: boolean
+
+    /**
+     * 全局展示作者
+     */
+    author?: string
   }
   /**
    * 友链配置
@@ -47,19 +63,22 @@ export namespace WmhThemeConfig {
     url: string
     avatar: string
   }
-  export interface HomeConfig {
+  /**
+   * 动态设置首页banner Title
+   */
+  export interface HomeDynamicConfig {
     handleChangeSlogan?: (oldSlogan: string) => string | Promise<string>
     setCustomSlogan?: () => string
   }
   /**
-   * 博客配置
+   * 博客all配置
    */
   export interface BlogConfig {
     pagesData: PageData[]
     srcDir?: string
     author?: string
-    home?: HomeBlog
-    article?: ArticleConfig
+    homeDynamicConfig?: HomeDynamicConfig
+    globalPagesData?: GlobalPagesData
     friendLink?: FriendLink[]
   }
 

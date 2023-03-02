@@ -2,9 +2,9 @@ import VPTheme, { WmhThemeConfig } from "@chendap/vitepress-wmh"
 import { h } from "vue"
 import { EnhanceAppContext } from "vitepress"
 
-const homeProps: WmhThemeConfig.HomeConfig = {
+const homeProps: WmhThemeConfig.HomeDynamicConfig = {
   setCustomSlogan() {
-    return "未来不可期，能做的就是把握当下"
+    return "未来不可期，能做的就是把握当下!!"
   }
 }
 

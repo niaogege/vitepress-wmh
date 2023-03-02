@@ -1,11 +1,20 @@
 <script setup lang="ts" name="HOME">
 import Theme from "vitepress/theme"
 import VPHomeMain from "./VPHomeMain.vue"
+import VPArticleAnalyze from "./VPArticleAnalyze.vue"
 const { Layout } = Theme
 </script>
 
 <template>
   <Layout>
+    <!-- 嵌入式阅读分析 -->
+    <template #doc-before>
+      <!-- 阅读时间分析 -->
+      <ClientOnly>
+        <VPArticleAnalyze />
+      </ClientOnly>
+    </template>
+
     <!-- 自定义首页 -->
     <template #home-hero-before>
       <div class="VPApp">

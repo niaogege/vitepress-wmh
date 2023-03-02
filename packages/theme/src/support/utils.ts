@@ -1,14 +1,14 @@
-export function formatDate(d: any, fmt = 'yyyy-MM-dd hh:mm:ss') {
+export function formatDate(d: any, fmt = "yyyy-MM-dd hh:mm:ss") {
   if (!(d instanceof Date)) {
     d = new Date(d)
   }
   const o: any = {
-    'M+': d.getMonth() + 1, // 月份
-    'd+': d.getDate(), // 日
-    'h+': d.getHours(), // 小时
-    'm+': d.getMinutes(), // 分
-    's+': d.getSeconds(), // 秒
-    'q+': Math.floor((d.getMonth() + 3) / 3), // 季度
+    "M+": d.getMonth() + 1, // 月份
+    "d+": d.getDate(), // 日
+    "h+": d.getHours(), // 小时
+    "m+": d.getMinutes(), // 分
+    "s+": d.getSeconds(), // 秒
+    "q+": Math.floor((d.getMonth() + 3) / 3), // 季度
     S: d.getMilliseconds() // 毫秒
   }
   if (/(y+)/.test(fmt)) {
@@ -60,14 +60,14 @@ export function formatShowDate(date: Date | string) {
     return `${Math.floor(diff / oneDay)}天前`
   }
 
-  return formatDate(new Date(date), 'yyyy-MM-dd')
+  return formatDate(new Date(date), "yyyy-MM-dd")
 }
 
 const pattern =
   /[a-zA-Z0-9_\u0392-\u03c9\u00c0-\u00ff\u0600-\u06ff\u0400-\u04ff]+|[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af]+/g
 
 // copy from https://github.com/youngjuning/vscode-juejin-wordcount/blob/main/count-word.ts
-export default function countWord(data: string) {
+export function countWord(data: string) {
   const m = data.match(pattern)
   let count = 0
   if (!m) {

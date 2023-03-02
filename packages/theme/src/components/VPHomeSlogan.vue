@@ -1,16 +1,23 @@
 <script setup lang="ts" name="VPHomeMain">
-import { useData } from "vitepress"
-import { WmhThemeConfig } from "../types/config"
+import { ref } from "vue"
 import { useHomeConfig } from "../composables/config"
-const { theme } = useData<WmhThemeConfig.Config>()
 const { setCustomSlogan } = useHomeConfig()
-console.log("setCustomSlogan", theme)
-const title = setCustomSlogan && setCustomSlogan()
+const title = ref(setCustomSlogan && setCustomSlogan())
 </script>
 <template>
-  <div>
+  <div class="VPHomeSlogan">
     <h1>{{ title }}</h1>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.VPHomeSlogan {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-size: 20px;
+  color: black;
+}
+</style>

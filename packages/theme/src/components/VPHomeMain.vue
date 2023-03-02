@@ -4,6 +4,7 @@ import { computed } from "vue"
 import { WmhThemeConfig } from "../types/config"
 import { useArticles } from "../composables/config"
 import VPHomeSlogan from "./VPHomeSlogan.vue"
+import VPHomeMainItem from "./VPHomeMainItem.vue"
 const { theme } = useData<WmhThemeConfig.Config>()
 const docs = useArticles()
 const wikiList = computed(() => {
@@ -26,7 +27,16 @@ const globalAuthor = computed(() => theme.value.blog.author || "")
     </section>
     <h1>author: {{ globalAuthor }}</h1>
     <div v-for="v in filterData" key="v.route">
-      <h1>title: {{ v.meta.title }}</h1>
+      <!-- <h1>title: {{ v.meta.title }}</h1> -->
+      <VPHomeMainItem
+        :route="v.route"
+        :title="v.meta.title"
+        :description="v.meta.description"
+        :date="v.meta.date"
+        :tag="v.meta.tag"
+        :cover="v.meta.cover"
+        :author="v.meta.author"
+      />
     </div>
   </div>
 </template>

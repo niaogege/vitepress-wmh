@@ -1,4 +1,4 @@
-import { useData } from "vitepress"
+import { useData, useRoute } from "vitepress"
 import {
   Component,
   computed,
@@ -13,9 +13,13 @@ import type { WmhThemeConfig } from "../types/config"
 const configSymbol: InjectionKey<Ref<WmhThemeConfig.Config>> =
   Symbol("theme-config")
 
-const homeConfigSymbol: InjectionKey<WmhThemeConfig.HomeConfig> =
+const homeConfigSymbol: InjectionKey<WmhThemeConfig.HomeDynamicConfig> =
   Symbol("home-config")
 
+/**
+ * @param App
+ * @returns
+ */
 export function withConfigProvider(App: Component) {
   return defineComponent({
     name: "ConfigProvider",
@@ -27,7 +31,7 @@ export function withConfigProvider(App: Component) {
     },
     setup(props, { slots }) {
       console.log(props, "PROPS")
-      provide(homeConfigSymbol, props as WmhThemeConfig.HomeConfig)
+      provide(homeConfigSymbol, props as WmhThemeConfig.HomeDynamicConfig)
       const { theme } = useData()
       const config = computed(() => resolveConfig(theme.value))
       provide(configSymbol, config)
@@ -36,24 +40,49 @@ export function withConfigProvider(App: Component) {
   })
 }
 
+/**
+ * blog所有配置
+ * @returns
+ */
 export function useConfig() {
   return {
     config: inject(configSymbol)!.value
   }
 }
 
+/**
+ * @returns blog单独配置
+ */
 export function useBlogConfig() {
   return inject(configSymbol)!.value.blog
 }
 
-export function useHomeConfig(): WmhThemeConfig.HomeConfig {
+export function useHomeConfig(): WmhThemeConfig.HomeDynamicConfig {
   return inject(homeConfigSymbol)!
 }
 
+/**
+ * 博客页面级配置
+ * @returns
+ */
 export function useArticles() {
   const blogConfig = useConfig()
   const articles = computed(() => blogConfig.config?.blog?.pagesData || [])
   return articles
+}
+
+/**
+ * 当前的文章
+ * @returns
+ */
+export function useCurrentArticle() {
+  const blogConfig = useConfig()
+  const route = useRoute()
+  const docs = computed(() => blogConfig.config.blog.pagesData)
+  const currentArticle = computed(() =>
+    docs.value.find((v) => v.route === route.path.replace(/.html$/, ""))
+  )
+  return currentArticle
 }
 
 function resolveConfig(config: WmhThemeConfig.Config): WmhThemeConfig.Config {
