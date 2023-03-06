@@ -19,12 +19,12 @@ const { Layout } = Theme
     <template #home-hero-before>
       <div class="VPApp">
         <VPHomeMain />
-        <div class="header-banner">
+        <!-- <div class="header-banner">
           <h2>THis is banner</h2>
         </div>
         <div class="content-wrapper">
           <h4>This is Content</h4>
-        </div>
+        </div> -->
       </div>
     </template>
     <!-- <template #sidebar-nav-after>
@@ -42,6 +42,5 @@ const { Layout } = Theme
   display: flex;
   flex-direction: column;
   transition: background-color 0.5s;
-  border: 1px solid red;
 }
 </style>

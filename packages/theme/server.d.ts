@@ -1,5 +1,9 @@
 import { DefaultTheme, UserConfig } from 'vitepress';
 
+interface HomeBannerSetting {
+    title: string;
+    color: string;
+}
 /**
  * 传入参数配置类型
  */
@@ -19,10 +23,13 @@ declare namespace WmhThemeConfig {
         tag?: string[];
         description?: string;
         cover?: string;
-        sticky?: number;
         author?: string;
         hidden?: boolean;
         layout?: string;
+        /**
+         * 是否需要在首页推荐模块展示 数值越大 展示在最前面
+         */
+        recommend?: number | boolean;
     }
     /**
      * 页面配置
@@ -61,8 +68,7 @@ declare namespace WmhThemeConfig {
      * 动态设置首页banner Title
      */
     interface HomeDynamicConfig {
-        handleChangeSlogan?: (oldSlogan: string) => string | Promise<string>;
-        setCustomSlogan?: () => string;
+        setCustomSlogan?: () => string | HomeBannerSetting;
     }
     /**
      * 博客all配置

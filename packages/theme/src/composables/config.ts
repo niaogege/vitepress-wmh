@@ -7,7 +7,10 @@ import {
   inject,
   InjectionKey,
   provide,
-  Ref
+  ref,
+  Ref,
+  onMounted,
+  onUnmounted
 } from "vue"
 import type { WmhThemeConfig } from "../types/config"
 const configSymbol: InjectionKey<Ref<WmhThemeConfig.Config>> =
@@ -92,5 +95,24 @@ function resolveConfig(config: WmhThemeConfig.Config): WmhThemeConfig.Config {
       ...config?.blog,
       pagesData: config?.blog?.pagesData || []
     }
+  }
+}
+
+export function useWidth() {
+  const w = ref(document.body.clientWidth)
+  const h = ref(document.body.clientHeight)
+  function update(e) {
+    w.value = e.target.innerWidth
+    h.value = e.target.innerHeight
+  }
+  onMounted(() => {
+    window.addEventListener("resize", update)
+  })
+  onUnmounted(() => {
+    window.removeEventListener("resize", update)
+  })
+  return {
+    w,
+    h
   }
 }
