@@ -14,7 +14,6 @@ import {
 export function getThemeConfig(cfg?: Partial<WmhThemeConfig.BlogConfig>) {
   const srcDir = cfg?.srcDir || process.argv.slice(2)?.[1] || "."
   const files = glob.sync(`${srcDir}/**/*.md`, { ignore: ["node_modules"] })
-  console.log(files, "FILES")
   const data = files
     .map((v) => {
       let route = v

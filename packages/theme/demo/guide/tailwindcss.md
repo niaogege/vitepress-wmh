@@ -2,6 +2,7 @@
 layout: doc
 description: 如何愉快书写css,tailwindCss告诉你答案
 title: 如何愉快书写css?
+recommend: 2
 cover: https://www.bythewayer.com/img/txcos.webp
 tag:
   - test

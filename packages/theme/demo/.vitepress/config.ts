@@ -25,6 +25,10 @@ const customTheme = getThemeConfig({
   globalPagesData: {
     readingTime: true,
     displayComment: true
+  },
+  recommend: {
+    total: 6,
+    priority: "weight"
   }
 })
 

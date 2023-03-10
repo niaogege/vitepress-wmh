@@ -1,15 +1,29 @@
-<script setup lang="ts" name="VPHomeRecommend">
-import { ref } from "vue"
-import { useHomeConfig } from "../composables/config"
-const { setCustomSlogan } = useHomeConfig()
-const title = ref(setCustomSlogan && setCustomSlogan())
+<script setup lang="ts" name="VPHomeRecommendItem">
+const props = defineProps<{
+  title: string
+  date: string
+  tag?: string[]
+  description?: string
+  cover?: string
+  sticky?: number
+  author?: string
+  hidden?: boolean
+  layout?: string
+  route: string
+  index: number
+}>()
 </script>
 <template>
-  <div
-    class="mx-auto md:max-w-screen-md pl-4 w-full bg-gray-300 border-1 border-dashed border-red-100"
-  >
-    <!-- <= 768 单排-->
-    <!-- =1280 两排或者三排-->
+  <div class="w-full md:w-1/2 lg:w-1/3 bg-red-100 p-4 mb-5 flex">
+    <div class="font-sans text-gray-300 flex-shrink-0 text-2xl pr-4">
+      {{ "0" + index }}
+    </div>
+    <div>
+      <div>
+        {{ title }}
+      </div>
+      <div>{{ author }}</div>
+    </div>
   </div>
 </template>
 

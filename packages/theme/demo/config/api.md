@@ -1,16 +1,16 @@
 ---
 layout: doc
-description: 配置全局能力以及页面相关能力
-title: WmhTheme主题配置详细说明
+description: API配置全局能力以及页面相关能力
+title: WmhTheme主题配置API说明
 readingTime: false
-recommend: 3
+recommend: 4
 cover: https://www.bythewayer.com/img/res.webp
 tag:
   - 配置
   - api
 ---
 
-# This is Config
+# API This is Config
 
 撰写 API 文档
 

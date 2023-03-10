@@ -71,6 +71,13 @@ declare namespace WmhThemeConfig {
         setCustomSlogan?: () => string | HomeBannerSetting;
     }
     /**
+     * 推荐相关设置
+     */
+    interface RecommendConfig {
+        total: number;
+        priority: "weight" | "data";
+    }
+    /**
      * 博客all配置
      */
     interface BlogConfig {
@@ -80,6 +87,7 @@ declare namespace WmhThemeConfig {
         homeDynamicConfig?: HomeDynamicConfig;
         globalPagesData?: GlobalPagesData;
         friendLink?: FriendLink[];
+        recommend?: RecommendConfig;
     }
     interface Config extends DefaultTheme.Config {
         blog: BlogConfig;
@@ -94,6 +102,7 @@ declare function getThemeConfig(cfg?: Partial<WmhThemeConfig.BlogConfig>): {
         homeDynamicConfig?: WmhThemeConfig.HomeDynamicConfig | undefined;
         globalPagesData?: WmhThemeConfig.GlobalPagesData | undefined;
         friendLink?: WmhThemeConfig.FriendLink[] | undefined;
+        recommend?: WmhThemeConfig.RecommendConfig | undefined;
     };
     sidebar: {
         text: string;

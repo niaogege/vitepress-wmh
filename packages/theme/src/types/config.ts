@@ -77,6 +77,18 @@ export namespace WmhThemeConfig {
   export interface HomeDynamicConfig {
     setCustomSlogan?: () => string | HomeBannerSetting
   }
+
+  /**
+   * 推荐相关设置
+   */
+  export interface RecommendConfig {
+    // 显示几个 默认显示6个
+    total: number
+    // 优先级 按照文章里的参数
+    // 默认按照weight
+    priority: "weight" | "date"
+  }
+
   /**
    * 博客all配置
    */
@@ -87,6 +99,7 @@ export namespace WmhThemeConfig {
     homeDynamicConfig?: HomeDynamicConfig
     globalPagesData?: GlobalPagesData
     friendLink?: FriendLink[]
+    recommend?: RecommendConfig
   }
 
   export interface Config extends DefaultTheme.Config {

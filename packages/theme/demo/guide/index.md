@@ -3,6 +3,7 @@ layout: doc
 description: 书写指导
 title: 书写引导
 cover: https://www.bythewayer.com/img/txcos.webp
+recommend: 1
 tag:
   - test
   - 配置

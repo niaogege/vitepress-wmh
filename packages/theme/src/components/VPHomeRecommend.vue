@@ -1,14 +1,24 @@
 <script setup lang="ts" name="VPHomeRecommend">
-import { ref } from "vue"
-import { useHomeConfig } from "../composables/config"
-const { setCustomSlogan } = useHomeConfig()
-const title = ref(setCustomSlogan && setCustomSlogan())
+import { ref, computed } from "vue"
+import { useArticles, useBlogConfig } from "../composables/config"
+import VPHomeRecommendItem from "./VPHomeRecommendItem.vue"
+const docs = useArticles()
+const { recommend } = useBlogConfig()
+const total = ref<number>(recommend!.total)
+console.log(docs, "PPPdocs", total)
+const wikiList = computed(() => {
+  const data = docs.value
+    .filter((v) => v.meta.date && v.meta.title)
+    .filter((v) => v.meta.recommend)
+    .slice(0, total.value)
+  data.sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date))
+  return data
+})
+console.log(wikiList, "wikiList")
 </script>
 <template>
-  <div class="w-full mt-4 bg-gray-300 border-2 border-dashed border-black">
-    <div
-      class="mx-auto md:max-w-screen-md lg:max-w-screen-lg pl-4 w-full bg-gray-300 border-1 border-dashed border-red-100"
-    >
+  <div class="w-full mt-4">
+    <div class="mx-auto md:max-w-screen-md lg:max-w-screen-lg pl-4 w-full mb-4">
       <h1 class="w-auto text-left">本站推荐</h1>
     </div>
     <div
@@ -17,21 +27,18 @@ const title = ref(setCustomSlogan && setCustomSlogan())
       <!-- <= 768 单排-->
       <!-- =1280 两排或者三排-->
 
-      <div class="w-full md:w-1/2 lg:w-1/3 bg-red-200 p-4 mb-5">
-        THis is Recommend 111sdsdsdsdsdsTHis is Recommend 111sdsdsdsdsds
-      </div>
-      <div class="w-full md:w-1/2 lg:w-1/3 md:space-x-4 bg-red-100 p-4 mb-5">
-        THis is Recommend 222
-      </div>
-      <div class="w-fill md:w-1/2 lg:w-1/3 bg-red-200 p-4 mb-4">
-        THis is Recommend 333
-      </div>
-      <div class="w-full md:w-1/2 lg:w-1/3 bg-red-100 p-4 mb-4">
-        THis is Recommend 222
-      </div>
-      <div class="w-fill md:w-1/2 lg:w-1/3 bg-red-200 p-4 mb-4">
-        THis is Recommend 333
-      </div>
+      <template v-for="(v, index) in wikiList" key="v.route">
+        <VPHomeRecommendItem
+          :route="v.route"
+          :title="v.meta.title"
+          :description="v.meta.description"
+          :date="v.meta.date"
+          :tag="v.meta.tag"
+          :cover="v.meta.cover"
+          :author="v.meta.author"
+          :index="index + 1"
+        />
+      </template>
     </div>
   </div>
 </template>

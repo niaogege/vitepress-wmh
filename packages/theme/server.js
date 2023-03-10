@@ -124,7 +124,6 @@ function getTextSummary(text, count = 100) {
 function getThemeConfig(cfg) {
   const srcDir = cfg?.srcDir || process.argv.slice(2)?.[1] || ".";
   const files = import_fast_glob.default.sync(`${srcDir}/**/*.md`, { ignore: ["node_modules"] });
-  console.log(files, "FILES");
   const data = files.map((v) => {
     let route = v.replace(".md", "");
     if (route.startsWith("./")) {
