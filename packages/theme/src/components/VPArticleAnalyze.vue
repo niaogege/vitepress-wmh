@@ -56,8 +56,6 @@ onMounted(() => {
 })
 const route = useRoute()
 
-console.log(route, "ROUTE")
-
 const { theme } = useData<WmhThemeConfig.Config>()
 const globalAuthor = computed(() => theme.value.blog.author || "")
 const author = computed(

@@ -31,7 +31,6 @@ export function getThemeConfig(cfg?: Partial<WmhThemeConfig.BlogConfig>) {
       }
 
       const fileContent = fs.readFileSync(v, "utf-8")
-      console.log(fileContent, "fileContent")
       // TODO: 支持JSON
       const meta: Partial<WmhThemeConfig.PageMeta> = {
         ...matter(fileContent).data
@@ -40,7 +39,6 @@ export function getThemeConfig(cfg?: Partial<WmhThemeConfig.BlogConfig>) {
       if (!meta.title) {
         meta.title = getDefaultTitle(fileContent)
       }
-
       if (!meta.date) {
         meta.date = getFileBirthTime(v)
       } else {

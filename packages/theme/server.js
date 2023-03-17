@@ -135,7 +135,6 @@ function getThemeConfig(cfg) {
       route = route.replace(new RegExp(`^${import_path.default.join(srcDir, "/")}`), "");
     }
     const fileContent = import_fs.default.readFileSync(v, "utf-8");
-    console.log(fileContent, "fileContent");
     const meta = {
       ...(0, import_gray_matter.default)(fileContent).data
     };

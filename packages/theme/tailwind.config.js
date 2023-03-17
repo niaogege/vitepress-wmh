@@ -4,5 +4,6 @@ module.exports = {
     extend: {}
   },
   plugins: [],
-  content: ["./demo/.vitepress/**/*.{vue,ts}", "./src/components/*.{vue, ts}"]
+  content: ["./demo/.vitepress/**/*.{vue,ts}", "./src/components/*.{vue, ts}"],
+  theme: {}
 }

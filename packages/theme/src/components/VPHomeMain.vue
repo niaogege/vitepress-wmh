@@ -6,6 +6,7 @@ import { useArticles } from "../composables/config"
 import VPHomeSlogan from "./VPHomeSlogan.vue"
 import VPHomeMainItem from "./VPHomeMainItem.vue"
 import VPHomeRecommend from "./VPHomeRecommend.vue"
+import VPHomeTag from "./VPHomeTag.vue"
 const { theme } = useData<WmhThemeConfig.Config>()
 const docs = useArticles()
 const wikiList = computed(() => {
@@ -18,27 +19,33 @@ const wikiList = computed(() => {
 const filterData = computed(() => {
   return wikiList.value.filter((v) => v)
 })
-console.log(filterData, "DOCS")
 const globalAuthor = computed(() => theme.value.blog.author || "")
 </script>
 <template>
-  <div>
-    <section>
-      <VPHomeSlogan />
-      <VPHomeRecommend />
+  <section>
+    <VPHomeSlogan />
+    <VPHomeRecommend />
+    <section
+      class="flex justify-center flex-col p-4 md:flex-row-reverse md:mx-auto w-full lg:max-w-screen-lg relative"
+    >
+      <section class="w-full md:w-64 border-red-200 border-solid border-2">
+        <VPHomeTag title="tags" />
+      </section>
+      <section class="md:order-last flex-auto lg:pr-6 md:pr-4">
+        <template v-for="v in filterData" key="v.route">
+          <VPHomeMainItem
+            :route="v.route"
+            :title="v.meta.title"
+            :description="v.meta.description"
+            :date="v.meta.date"
+            :tag="v.meta.tag"
+            :cover="v.meta.cover"
+            :author="v.meta.author || globalAuthor"
+          />
+        </template>
+      </section>
     </section>
-    <template v-for="v in filterData" key="v.route">
-      <VPHomeMainItem
-        :route="v.route"
-        :title="v.meta.title"
-        :description="v.meta.description"
-        :date="v.meta.date"
-        :tag="v.meta.tag"
-        :cover="v.meta.cover"
-        :author="v.meta.author"
-      />
-    </template>
-  </div>
+  </section>
 </template>
 
 <style scoped></style>

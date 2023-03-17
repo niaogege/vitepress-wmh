@@ -75,7 +75,7 @@ declare namespace WmhThemeConfig {
      */
     interface RecommendConfig {
         total: number;
-        priority: "weight" | "data";
+        priority: "weight" | "date";
     }
     /**
      * 博客all配置

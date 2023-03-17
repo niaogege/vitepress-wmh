@@ -1,20 +1,13 @@
 <template>
   <div
-    class="max-w-md mx-auto my-20 bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
+    class="w-full mx-auto my-10 bg-white rounded-lg shadow-md hover:shadow-xl border-2 border-black border-solid"
   >
-    <div class="md:flex">
-      <div class="md:flex-shrink-0">
-        <img
-          class="h-48 w-full object-cover md:h-full md:w-48"
-          :src="cover"
-          :alt="title"
-        />
-      </div>
+    <div class="md:flex w-full md:justify-between">
       <div class="p-8">
         <div
           class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
         >
-          Case study
+          {{ `${tag}` }}
         </div>
         <a
           :href="route"
@@ -24,6 +17,13 @@
         <p class="mt-2 text-gray-500">
           {{ description }}
         </p>
+      </div>
+      <div class="md:flex-shrink-0">
+        <img
+          class="h-48 w-full object-cover md:h-full md:w-48"
+          :src="cover"
+          :alt="title"
+        />
       </div>
     </div>
   </div>
@@ -42,6 +42,6 @@ const props = defineProps<{
   layout?: string
   route: string
 }>()
+console.log(props, "PROPS")
 </script>
-
 <style scoped></style>
