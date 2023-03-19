@@ -4,7 +4,6 @@ import { useHomeConfig, useWidth } from "../composables/config"
 const { setCustomSlogan } = useHomeConfig()
 const title = ref(setCustomSlogan && setCustomSlogan())
 const { h, w } = useWidth()
-console.log(w, h)
 </script>
 <template>
   <div class="VPHomeSlogan bg-yellow-500">

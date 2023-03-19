@@ -6,7 +6,7 @@ import { useArticles } from "../composables/config"
 import VPHomeSlogan from "./VPHomeSlogan.vue"
 import VPHomeMainItem from "./VPHomeMainItem.vue"
 import VPHomeRecommend from "./VPHomeRecommend.vue"
-import VPHomeTag from "./VPHomeTag.vue"
+import VPHomeRight from "./VPHomeRight.vue"
 const { theme } = useData<WmhThemeConfig.Config>()
 const docs = useArticles()
 const wikiList = computed(() => {
@@ -19,6 +19,7 @@ const wikiList = computed(() => {
 const filterData = computed(() => {
   return wikiList.value.filter((v) => v)
 })
+console.log(theme, "theme")
 const globalAuthor = computed(() => theme.value.blog.author || "")
 </script>
 <template>
@@ -26,12 +27,12 @@ const globalAuthor = computed(() => theme.value.blog.author || "")
     <VPHomeSlogan />
     <VPHomeRecommend />
     <section
-      class="flex justify-center flex-col p-4 md:flex-row-reverse md:mx-auto w-full lg:max-w-screen-lg relative"
+      class="flex justify-center flex-col p-4 md:flex-row-reverse md:mx-auto w-full lg:max-w-screen-lg relative mt-2"
     >
-      <section class="w-full md:w-64 border-red-200 border-solid border-2">
-        <VPHomeTag title="tags" />
+      <section class="w-full md:w-72">
+        <VPHomeRight />
       </section>
-      <section class="md:order-last flex-auto lg:pr-6 md:pr-4">
+      <section class="md:order-last flex-auto md:pr-8">
         <template v-for="v in filterData" key="v.route">
           <VPHomeMainItem
             :route="v.route"

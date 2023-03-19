@@ -2,6 +2,7 @@
 description: 版本发布记录
 title: Changelog
 cover: https://www.bythewayer.com/img/txcos.webp
+hidden: true
 tag:
   - log
 ---

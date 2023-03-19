@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-full mx-auto my-10 bg-white rounded-lg shadow-md hover:shadow-xl border-2 border-black border-solid"
-  >
+  <div class="w-full mx-auto mb-10 rounded-lg shadow-md hover:shadow-lg">
     <div class="md:flex w-full md:justify-between">
       <div class="p-8">
         <div
@@ -20,7 +18,7 @@
       </div>
       <div class="md:flex-shrink-0">
         <img
-          class="h-48 w-full object-cover md:h-full md:w-48"
+          class="h-48 w-full object-cover md:h-full md:w-48 md:rounded-lg"
           :src="cover"
           :alt="title"
         />
@@ -42,6 +40,5 @@ const props = defineProps<{
   layout?: string
   route: string
 }>()
-console.log(props, "PROPS")
 </script>
 <style scoped></style>

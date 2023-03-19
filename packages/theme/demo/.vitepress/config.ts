@@ -14,8 +14,7 @@ const customTheme = getThemeConfig({
     {
       name: "陈大鹏",
       des: "代码改变世界",
-      avatar:
-        "https://img.cdn.sugarat.top/mdImg/MTY3NDk5NTE2NzAzMA==674995167030",
+      avatar: "https://www.bythewayer.com/img/logo1.webp",
       url: "https://bythewayer.com"
     }
   ],
@@ -34,6 +33,7 @@ const customTheme = getThemeConfig({
 
 export default defineConfigWithTheme<WmhThemeConfig.Config>({
   title: "WmhTheme",
+  description: "基于vitepress自定义主题",
   head: [
     [
       "link",

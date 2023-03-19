@@ -11,7 +11,7 @@ layout: home
 #   link: https://github.com/niaogege/love
 # 首页部分元素定制
 blog:
-  name: "chendap/theme"
-  motto: 简约风的 Vitepress 博客主题
-  inspiring: 基于 Vitepress 定制的主题🎨
+  name: "chendap/wmhTheme"
+  motto: 朴素简约博客主题
+  inspiring: 基于 Vitepress 定制的主题
 ---

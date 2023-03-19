@@ -82,7 +82,7 @@ export namespace WmhThemeConfig {
    * 推荐相关设置
    */
   export interface RecommendConfig {
-    // 显示几个 默认显示6个
+    // 自定义显示几个 默认显示6个
     total: number
     // 优先级 按照文章里的参数
     // 默认按照weight
