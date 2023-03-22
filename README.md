@@ -66,3 +66,14 @@ pnpm i @chendap@pkg2 --filter pkg1
 ```sh
 tsc --init // 生成tsconfig.json
 ```
+
+### 开发
+
+#### tailwindcss IDE 插件
+
+- [IntelliSense for VS Code](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [prettier and tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+
+```js
+npm install -D prettier prettier-plugin-tailwindcss
+```

@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts" name="VPHomeTag">
-import VPHomeFriendLink from "./VPHomeFriendLink.vue"
-import VPHomeTag from "./VPHomeTag.vue"
+import VPHomeFriendLink from "./VPHomeFriendLink.vue";
+import VPHomeTag from "./VPHomeTag.vue";
 </script>
 <style scoped></style>

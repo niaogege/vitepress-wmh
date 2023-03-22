@@ -1,9 +1,9 @@
 <script setup lang="ts" name="VPHomeMain">
-import { ref } from "vue"
-import { useHomeConfig, useWidth } from "../composables/config"
-const { setCustomSlogan } = useHomeConfig()
-const title = ref(setCustomSlogan && setCustomSlogan())
-const { h, w } = useWidth()
+import { ref } from "vue";
+import { useHomeConfig, useWidth } from "../composables/config";
+const { setCustomSlogan } = useHomeConfig();
+const title = ref(setCustomSlogan && setCustomSlogan());
+const { h, w } = useWidth();
 </script>
 <template>
   <div class="VPHomeSlogan bg-yellow-500">

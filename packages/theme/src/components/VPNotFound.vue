@@ -1,7 +1,7 @@
-<script setup lang="ts" name='VPNot'>
-import Theme from "vitepress/theme"
+<script setup lang="ts" name="VPNot">
+import Theme from "vitepress/theme";
 
-const { Layout } = Theme
+const { Layout } = Theme;
 </script>
 <template>
   <Layout>
@@ -10,5 +10,4 @@ const { Layout } = Theme
   </Layout>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,30 +1,30 @@
 <script setup lang="ts" name="VPHomeRecommendItem">
 const props = defineProps<{
-  title: string
-  date: string
-  tag?: string[]
-  description?: string
-  cover?: string
-  sticky?: number
-  author?: string
-  hidden?: boolean
-  layout?: string
-  route: string
-  index: number
-}>()
+  title: string;
+  date: string;
+  tag?: string[];
+  description?: string;
+  cover?: string;
+  sticky?: number;
+  author?: string;
+  hidden?: boolean;
+  layout?: string;
+  route: string;
+  index: number;
+}>();
 </script>
 <template>
-  <div class="w-full md:w-1/2 lg:w-1/3 p-4 mb-4 flex">
-    <div class="font-sans text-gray-300 flex-shrink-0 text-2xl pr-4">
+  <div class="mb-4 flex w-full p-4 md:w-1/2 lg:w-1/3">
+    <div class="flex-shrink-0 pr-4 font-sans text-2xl text-gray-300">
       {{ "0" + index }}
     </div>
     <div>
-      <span class="text-black text-sm">
+      <span class="text-sm text-black">
         {{ author }}
       </span>
       <a
         :href="route"
-        class="block mt-1 text-base leading-tight font-medium text-black hover:underline mb-2"
+        class="mt-1 mb-2 block text-base font-medium leading-tight text-black hover:underline"
         >{{ title }}</a
       >
       <span class="text-xs">

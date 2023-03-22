@@ -1,18 +1,18 @@
 <template>
-  <div class="w-full mx-auto mb-10 rounded-lg shadow-md hover:shadow-lg">
-    <div class="md:flex w-full md:justify-between">
+  <div class="mx-auto mb-10 w-full rounded-lg shadow-md hover:shadow-lg">
+    <div class="w-full md:flex md:justify-between">
       <div class="p-8">
         <div
-          class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+          class="text-xs font-semibold uppercase tracking-wide text-gray-700"
         >
           {{ `${tag}` }}
         </div>
         <a
           :href="route"
-          class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+          class="mt-1 block text-xl font-bold leading-tight text-black hover:underline"
           >{{ title }}</a
         >
-        <p class="mt-2 text-gray-500">
+        <p class="text-md mt-2 text-gray-500">
           {{ description }}
         </p>
       </div>
@@ -29,16 +29,16 @@
 
 <script setup lang="ts" name="VPHomeMainItem">
 const props = defineProps<{
-  title: string
-  date: string
-  tag?: string[]
-  description?: string
-  cover?: string
-  sticky?: number
-  author?: string
-  hidden?: boolean
-  layout?: string
-  route: string
-}>()
+  title: string;
+  date: string;
+  tag?: string[];
+  description?: string;
+  cover?: string;
+  sticky?: number;
+  author?: string;
+  hidden?: boolean;
+  layout?: string;
+  route: string;
+}>();
 </script>
 <style scoped></style>

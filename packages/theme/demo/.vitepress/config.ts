@@ -16,6 +16,12 @@ const customTheme = getThemeConfig({
       des: "代码改变世界",
       avatar: "https://www.bythewayer.com/img/logo1.webp",
       url: "https://bythewayer.com"
+    },
+    {
+      name: "wmh",
+      des: "最强王者",
+      avatar: "https://www.bythewayer.com/img/logo1.webp",
+      url: "https://bythewayer.com/learn"
     }
   ],
   // 文章默认作者
