@@ -1,12 +1,27 @@
 <script setup lang="ts" name="VPHomeMain">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useHomeConfig, useWidth } from "../composables/config";
-const { setCustomSlogan } = useHomeConfig();
+import { useData } from "vitepress";
+const config = useHomeConfig();
+
+const { site, frontmatter } = useData();
+
+const name = computed(
+  () => (frontmatter.value.blog?.name ?? site.value.title) || ""
+);
+const description = computed(() => frontmatter.value.blog?.description || "");
+
+const homebg = computed(() => frontmatter.value.blog?.homebg || "");
+console.log(homebg, "homebg");
+const { setCustomSlogan } = config;
 const title = ref(setCustomSlogan && setCustomSlogan());
 const { h, w } = useWidth();
+const bg = `bg-[url('${homebg.value}')]`;
 </script>
 <template>
-  <div class="VPHomeSlogan bg-yellow-500">
+  <div
+    :class="['h-[340px]', bg, 'justify-center', 'flex', 'w-full', 'bg-auto']"
+  >
     <h1>{{ title }}</h1>
     <br />
     <h1>当前屏幕宽度{{ w }}</h1>
@@ -17,16 +32,11 @@ const { h, w } = useWidth();
 
 <style scoped>
 .VPHomeSlogan {
-  height: 448px;
   width: 100%;
   display: flex;
   justify-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-h1 {
-  font-size: 20px;
-  color: black;
 }
 </style>

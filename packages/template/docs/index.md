@@ -12,6 +12,6 @@ layout: home
 # 首页部分元素定制
 blog:
   name: "chendap/wmhTheme"
-  description: 朴素简约博客主题,基于 Vitepress 定制的主题
-  homebg: https://pica.zhimg.com/v2-4f4ce41d56c9fddf603f6b489f42bdcd_1440w.jpg
+  motto: 朴素简约博客主题
+  inspiring: 基于 Vitepress 定制的主题
 ---

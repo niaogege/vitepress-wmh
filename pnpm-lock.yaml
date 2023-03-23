@@ -37,7 +37,25 @@ importers:
       vue: 3.2.47
 
   packages/template:
-    specifiers: {}
+    specifiers:
+      '@chendap/vitepress-wmh': workspace:0.0.1-beta.0
+      autoprefixer: ^10.4.13
+      postcss: ^8.4.21
+      prettier: ^2.8.1
+      prettier-plugin-tailwindcss: ^0.2.5
+      tailwindcss: ^3.2.7
+      vitepress: ^1.0.0-alpha.40
+      vue: ^3.2.45
+    dependencies:
+      '@chendap/vitepress-wmh': link:../theme
+    devDependencies:
+      autoprefixer: 10.4.13_postcss@8.4.21
+      postcss: 8.4.21
+      prettier: 2.8.4
+      prettier-plugin-tailwindcss: 0.2.5_prettier@2.8.4
+      tailwindcss: 3.2.7_postcss@8.4.21
+      vitepress: 1.0.0-alpha.46
+      vue: 3.2.47
 
   packages/theme:
     specifiers:

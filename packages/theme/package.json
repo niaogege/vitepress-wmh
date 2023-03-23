@@ -4,15 +4,15 @@
   "description": "",
   "main": "src/index.ts",
   "exports": {
+    ".": "./src/index.ts",
     "./server": {
       "types": "./server.d.ts",
       "default": "./server.js"
-    },
-    ".": "./src/index.ts"
+    }
   },
   "scripts": {
     "dev": "vitepress dev demo",
-    "dev:lib": "pnpm run build:node && vitepress dev demo -w",
+    "dev:lib": "pnpm run build:node && vitepress dev demo",
     "build": "vitepress build demo",
     "build:node": "npx tsup src/server.ts --dts --out-dir=./",
     "preview": "vitepress preview demo"
@@ -21,6 +21,12 @@
     "vitepress",
     "theme",
     "blog"
+  ],
+  "files": [
+    "src",
+    "types",
+    "serve.js",
+    "serve.d.ts"
   ],
   "author": "",
   "license": "ISC",

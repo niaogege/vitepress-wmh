@@ -1,5 +1,13 @@
 # 基于 vitePress 搭建属于自己的主题包
 
+### 安装下载
+
+```js
+npx create-next-app --example with-next-seo next-seo-app
+// 如何做到的？一个指令就能下载github上的文件包
+npx --
+```
+
 ### 基于 changeset 发包
 
 步骤主要有

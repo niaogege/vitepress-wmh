@@ -1,20 +1,39 @@
 {
   "name": "@chendap/template",
   "version": "0.0.1-beta.0",
-  "description": "",
+  "description": "记录生活/爱情",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vitepress dev docs",
+    "dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs cpp",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "build": "vitepress build docs"
   },
-  "keywords": [
-    "vitepress",
-    "theme",
-    "blog"
-  ],
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.40",
+    "vue": "^3.2.45",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.5",
+    "tailwindcss": "^3.2.7"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "author": "chendap",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@chendap/vitepress-wmh": "workspace:0.0.1-beta.0"
+  }
 }
