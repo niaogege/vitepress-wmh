@@ -11,10 +11,10 @@ declare namespace WmhThemeConfig {
     /**
      * 首页配置
      */
-    interface HomePageSetting {
+    interface HomeStaticSetting {
         name?: string;
-        motto?: string;
-        inspiring?: string;
+        homebg?: string;
+        description?: string;
         pageSize?: number | undefined;
     }
     interface PageMeta {
@@ -88,6 +88,7 @@ declare namespace WmhThemeConfig {
         globalPagesData?: GlobalPagesData;
         friendLink?: FriendLink[];
         recommend?: RecommendConfig;
+        homeStaticSetting?: HomeStaticSetting;
     }
     interface Config extends DefaultTheme.Config {
         blog: BlogConfig;
@@ -103,11 +104,8 @@ declare function getThemeConfig(cfg?: Partial<WmhThemeConfig.BlogConfig>): {
         globalPagesData?: WmhThemeConfig.GlobalPagesData | undefined;
         friendLink?: WmhThemeConfig.FriendLink[] | undefined;
         recommend?: WmhThemeConfig.RecommendConfig | undefined;
+        homeStaticSetting?: WmhThemeConfig.HomeStaticSetting | undefined;
     };
-    sidebar: {
-        text: string;
-        items: never[];
-    }[];
 };
 declare function defineConfig(config: UserConfig<WmhThemeConfig.Config>): UserConfig<WmhThemeConfig.Config>;
 declare function defineConfigWithTheme<ThemeConfig>(config: UserConfig<ThemeConfig>): UserConfig<ThemeConfig>;

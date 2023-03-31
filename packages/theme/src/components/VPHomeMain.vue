@@ -19,15 +19,16 @@ const wikiList = computed(() => {
 const filterData = computed(() => {
   return wikiList.value.filter((v) => v);
 });
-console.log(theme, "theme");
 const globalAuthor = computed(() => theme.value.blog.author || "");
+const data = useData();
+console.log(data, "DATA");
 </script>
 <template>
-  <section>
+  <section class="h-full w-full bg-fixed bg-top bg-no-repeat">
     <VPHomeSlogan />
     <VPHomeRecommend />
     <section
-      class="relative mt-2 flex w-full flex-col justify-center p-4 md:mx-auto md:flex-row-reverse lg:max-w-screen-lg"
+      class="relative mt-4 flex w-full flex-col justify-center md:mx-auto md:flex-row-reverse lg:max-w-screen-lg"
     >
       <section class="w-full md:w-72">
         <VPHomeRight />

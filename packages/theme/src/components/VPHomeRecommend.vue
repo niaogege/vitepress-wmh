@@ -19,12 +19,9 @@ const { theme } = useData<WmhThemeConfig.Config>();
 const globalAuthor = computed(() => theme.value.blog.author || "");
 </script>
 <template>
-  <div class="mt-4 w-full">
-    <!-- <div class="mx-auto md:max-w-screen-md lg:max-w-screen-lg pl-4 w-full mb-4">
-      <h1 class="w-auto text-left">本站推荐</h1>
-    </div> -->
+  <div class="mt-4 w-auto">
     <div
-      class="mx-auto flex w-full flex-wrap border-b-2 border-dashed border-red-200 p-4 md:max-w-screen-md lg:max-w-screen-lg"
+      class="mx-auto flex flex-wrap border-b border-solid border-red-200 p-4 dark:border-gray-400 lg:max-w-screen-lg"
     >
       <template v-for="(v, index) in wikiList" key="v.route">
         <VPHomeRecommendItem

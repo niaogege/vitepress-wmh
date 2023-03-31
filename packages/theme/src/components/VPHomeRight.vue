@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3 md:sticky md:top-16">
+  <div class="md:sticky md:top-16">
     <VPHomeTag title="tags" />
     <VPHomeFriendLink />
   </div>

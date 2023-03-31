@@ -1,5 +1,5 @@
 {
-  "name": "@chendap/template",
+  "name": "@chendap/vitepress-wmh-template",
   "version": "0.0.1-beta.0",
   "description": "记录生活/爱情",
   "main": "index.js",

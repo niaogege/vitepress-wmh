@@ -1,8 +1,8 @@
 <script setup lang="ts" name="HOME">
-import Theme from "vitepress/theme"
-import VPHomeMain from "./VPHomeMain.vue"
-import VPArticleAnalyze from "./VPArticleAnalyze.vue"
-const { Layout } = Theme
+import Theme from "vitepress/theme";
+import VPHomeMain from "./VPHomeMain.vue";
+import VPArticleAnalyze from "./VPArticleAnalyze.vue";
+const { Layout } = Theme;
 </script>
 
 <template>
@@ -17,15 +17,7 @@ const { Layout } = Theme
 
     <!-- 自定义首页 -->
     <template #home-hero-before>
-      <div class="VPApp">
-        <VPHomeMain />
-        <!-- <div class="header-banner">
-          <h2>THis is banner</h2>
-        </div>
-        <div class="content-wrapper">
-          <h4>This is Content</h4>
-        </div> -->
-      </div>
+      <VPHomeMain />
     </template>
     <!-- <template #sidebar-nav-after>
       <h1>THis is Sidebar</h1>
@@ -37,10 +29,4 @@ const { Layout } = Theme
   </Layout>
 </template>
 
-<style scoped>
-.VPApp {
-  display: flex;
-  flex-direction: column;
-  transition: background-color 0.5s;
-}
-</style>
+<style scoped></style>

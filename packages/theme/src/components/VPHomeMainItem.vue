@@ -1,24 +1,24 @@
 <template>
-  <div class="mx-auto mb-10 w-full rounded-lg shadow-md hover:shadow-lg">
+  <div class="mx-auto mb-10 w-full rounded p-3 hover:border-0 hover:shadow-xl">
     <div class="w-full md:flex md:justify-between">
       <div class="p-8">
         <div
-          class="text-xs font-semibold uppercase tracking-wide text-gray-700"
+          class="text-xs font-semibold uppercase tracking-wide text-gray-700 dark:text-primary"
         >
           {{ `${tag}` }}
         </div>
         <a
           :href="route"
-          class="mt-1 block text-xl font-bold leading-tight text-black hover:underline"
+          class="mt-1 block text-xl font-bold leading-tight text-black hover:underline dark:text-yellow-50"
           >{{ title }}</a
         >
-        <p class="text-md mt-2 text-gray-500">
+        <p class="mt-2 text-sm text-gray-500 dark:text-primary">
           {{ description }}
         </p>
       </div>
       <div class="md:flex-shrink-0">
         <img
-          class="h-48 w-full object-cover md:h-full md:w-48 md:rounded-lg"
+          class="h-32 w-full rounded object-cover md:h-full md:w-48"
           :src="cover"
           :alt="title"
         />

@@ -161,13 +161,7 @@ function getThemeConfig(cfg) {
     blog: {
       pagesData: data,
       ...cfg
-    },
-    sidebar: [
-      {
-        text: "",
-        items: []
-      }
-    ]
+    }
   };
 }
 function defineConfig(config) {
